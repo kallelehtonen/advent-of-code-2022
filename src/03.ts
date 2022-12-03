@@ -22,7 +22,18 @@ const a = (): number => {
     .reduce(sum, 0);
 };
 
-const b = () => {};
+const b = (): number => {
+  const groups = input.match(/(?:.+\n?){3}/g) ?? [];
+
+  return groups
+    .map((group) => {
+      const [[...first], [...second], [...third]] = group.split(/\n/);
+      const commonType = first.filter((type) => second.includes(type) && third.includes(type));
+
+      return priorities.indexOf(commonType[0]) + 1;
+    })
+    .reduce(sum, 0);
+};
 
 console.log(a());
 console.log(b());
