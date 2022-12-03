@@ -1,9 +1,8 @@
 import * as fs from "fs";
+import { sum } from "./util";
 
 const input = fs.readFileSync("./input/01.txt", "utf-8").trim();
 const elves = input.split(/\n\s*\n/);
-
-const sum = (a: number, b: number): number => (a + b);
 
 const totalCaloriesByElf = elves.map((elf) => {
   const calories = elf.trim().split(/\n/).map(Number);

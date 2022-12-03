@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import { sum } from "./util";
 
 const input = fs.readFileSync("./input/02.txt", "utf-8").trim();
 
@@ -32,8 +33,6 @@ const points = {
   "Y": 2,
   "Z": 3,
 };
-
-const sum = (a: number, b: number): number => (a + b);
 
 const a = (): number => {
   return input.split(/\n/)
