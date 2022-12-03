@@ -3,12 +3,10 @@ import { sum } from "./util";
 
 const input = fs.readFileSync("./input/03.txt", "utf-8").trim();
 
-const prioritiesUpper = Array.from(Array(26))
-  .map((e, i) => i + 65)
-  .map((code) => String.fromCharCode(code));
 const prioritiesLower = Array.from(Array(26))
   .map((e, i) => i + 97)
   .map((code) => String.fromCharCode(code));
+const prioritiesUpper = prioritiesLower.map((letter) => letter.toUpperCase());
 const priorities = [...prioritiesLower, ...prioritiesUpper];
 
 const a = (): number => {
